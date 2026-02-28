@@ -3,14 +3,7 @@
   "buildCommand": "pnpm run docs:build",
   "installCommand": "pnpm install",
   "outputDirectory": "docs/.vuepress/dist",
-  "nodeVersion": "20.x",
   "env": {
     "NODE_ENV": "production"
-  },
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    },
-    "cache": false
   }
 }
