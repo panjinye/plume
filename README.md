@@ -31,144 +31,184 @@
 └── vercel.json            # Vercel 部署配置
 ```
 
-## 功能特点
+## 项目简介
 
-- **响应式设计**：适配各种屏幕尺寸
-- **深色模式**：支持自动切换和手动切换
-- **多语言支持**：包含中文和英文两个版本
-- **博客功能**：支持文章分类、标签、归档
-- **友链功能**：支持添加和展示友情链接
-- **社交链接**：集成 GitHub、邮箱、微信等社交平台
-- **评论系统**：集成 Twikoo 评论系统
-- **搜索功能**：支持本地搜索
-- **代码高亮**：支持多种编程语言的代码高亮
-- **数学公式**：支持 KaTeX 数学公式
-- **图表功能**：支持 Chart.js、ECharts、Mermaid 等图表库
+vuepress-theme-plume 是一个基于 VuePress 2 的现代化主题，专为创建**技术博客**、**生活随笔**、**产品文档**、**知识库**和**系列教程**而设计。
 
-## 安装说明
+主题注重内容表达和用户体验，提供丰富的 Markdown 扩展功能，让您的文档更加美观、专业且富有表现力。
 
-### 前置条件
+## 特性
 
-- Node.js >= 20.19.0 或 >= 22.0.0
-- pnpm >= 10.0.0
+- **💻 响应式设计** - 完美适配移动端、平板和桌面设备
+- **📖 集合系统** - 通过集合可同时实现博客、专栏、产品文档、技术文档、知识库等多种内容类型
+- **🔗 永久链接** - 自动生成文章永久链接
+- **⚖ 多语言支持** - 内置中文、英文等 7+ 种语言支持
+- **👀 搜索与评论** - 支持本地搜索、Algolia 搜索，以及多种评论系统（Giscus、Waline、Twikoo、Artalk）
+- **👨‍💻 双主题模式** - 支持浅色/深色主题，包括代码高亮
+- **📠 Markdown 增强** - 提示容器、任务列表、数学公式、代码演示、文件树、代码树、时间轴、折叠面板等
+- **🧀 代码块增强** - 代码分组、折叠、聚焦、行高亮、词高亮、twoslash 等
+- **😀 图标系统** - 内置 Iconify 200,000+ 图标，支持 IconFont、FontAwesome
+- **📚 代码演示嵌入** - 支持 CodePen、JSFiddle、CodeSandbox、Replit 等
+- **📊 图表支持** - Chart.js、ECharts、Mermaid、Flowchart、PlantUML、Markmap
+- **🎛 媒体嵌入** - PDF、Bilibili、YouTube、本地视频、音频等
+- **🪞 水印功能** - 支持全站水印和部分内容水印
+- **🔑 内容加密** - 支持全站加密和部分加密（目录加密、文章加密）
+- **⚡ 性能优化** - 编译缓存机制，大幅提升构建速度
+- **🔥 热更新配置** - 修改主题配置无需重启服务
 
-### 安装步骤
+## 快速开始
 
-1. 克隆项目
+### 环境要求
+
+- **Node.js**: ^20.19.0 或 >= 22.0.0
+- **包管理器**: npm 8+、pnpm 8+ 或 Yarn 2+
+
+### 安装
+
+使用命令行工具快速创建项目：
 
 ```bash
-git clone <repository-url>
-cd <project-directory>
+npm create vuepress-theme-plume@latest
 ```
 
-2. 安装依赖
+或手动安装：
 
 ```bash
+# 创建项目目录
+mkdir my-blog && cd my-blog
+
+# 初始化项目
+npm init
+
+# 安装依赖
+npm i -D vuepress@next vue
+npm i -D vuepress-theme-plume @vuepress/bundler-vite@next
+
+# 添加脚本到 package.json
+{
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  }
+}
+```
+
+### 配置
+
+创建 `docs/.vuepress/config.ts` 配置文件：
+
+```ts
+import { viteBundler } from '@vuepress/bundler-vite'
+import { defineUserConfig } from 'vuepress'
+import { plumeTheme } from 'vuepress-theme-plume'
+
+export default defineUserConfig({
+  lang: 'zh-CN',
+  title: '我的博客',
+  description: '欢迎来到我的博客',
+  bundler: viteBundler(),
+  theme: plumeTheme({
+    // 主题配置
+  }),
+})
+```
+
+### 启动
+
+```bash
+npm run docs:dev
+```
+
+访问 <http://localhost:8080> 查看您的站点。
+
+## 文档
+
+详细文档请访问：[https://theme-plume.vuejs.press](https://theme-plume.vuejs.press)
+
+### 主要文档
+
+- [安装与使用](https://theme-plume.vuejs.press/guide/usage/) - 完整的安装指南
+- [主题配置](https://theme-plume.vuejs.press/config/intro/) - 配置选项详解
+- [集合](https://theme-plume.vuejs.press/guide/quick-start/collection/) - 创建博客、文档专栏
+- [Markdown 增强](https://theme-plume.vuejs.press/guide/markdown/basic/) - 丰富的 Markdown 语法
+- [代码增强](https://theme-plume.vuejs.press/guide/code/intro/) - 代码块功能
+- [组件](https://theme-plume.vuejs.press/guide/components/badge/) - 内置组件使用
+- [功能特性](https://theme-plume.vuejs.press/guide/features/comments/) - 评论、搜索、加密等
+- [部署指南](https://theme-plume.vuejs.press/guide/quick-start/deployment/) - 部署到各种平台
+
+## 案例
+
+- [作者个人博客](https://pengzhanbo.cn/)
+
+[查看更多案例](https://theme-plume.vuejs.press/demos/)
+
+## 交流与支持
+
+- QQ 交流群：[792882761](https://qm.qq.com/q/O3HNy4rxYc)
+- 问题反馈：[GitHub Issues](https://github.com/pengzhanbo/vuepress-theme-plume/issues)
+- 讨论交流：[GitHub Discussions](https://github.com/pengzhanbo/vuepress-theme-plume/discussions)
+
+## 常见问题
+
+### 如何更新主题？
+
+```bash
+npx vp-update
+```
+
+### 构建时内存溢出？
+
+```bash
+export NODE_OPTIONS="--max_old_space_size=8192"
+npm run docs:build
+```
+
+更多常见问题，请查阅 [常见问题文档](https://theme-plume.vuejs.press/faq/)。
+
+## 贡献指南
+
+欢迎贡献代码！请先阅读 [贡献指南](./CONTRIBUTING.md)。
+
+开发要求：
+
+- Node.js 20.19.0+
+- pnpm 9+
+
+本地开发：
+
+```bash
+# 克隆仓库
+git clone https://github.com/pengzhanbo/vuepress-theme-plume.git
+
+# 安装依赖
 pnpm install
+
+# 构建项目
+pnpm build
+
+# 启动开发服务
+pnpm dev
 ```
 
-3. 启动开发服务器
+## 更新日志
 
-```bash
-pnpm docs:dev
-```
+详细更新内容请查阅 [Changelog](./CHANGELOG.md)。
 
-4. 构建生产版本
+## 贡献者
 
-```bash
-pnpm docs:build
-```
+感谢所有贡献者的付出！
 
-5. 预览生产版本
+![GitHub contributors](https://img.shields.io/github/contributors/pengzhanbo/vuepress-theme-plume?color=32A9C3&labelColor=1B3C4A&logo=contributorcovenant)
 
-```bash
-pnpm docs:preview
-```
+[![contributors](https://contrib.rocks/image?repo=pengzhanbo/vuepress-theme-plume)](https://github.com/pengzhanbo/vuepress-theme-plume/graphs/contributors)
 
-## 配置说明
+## License
 
-### 主题配置
+[MIT](./LICENSE)
 
-主题配置文件位于 `docs/.vuepress/plume.config.ts`，包含以下主要配置项：
-
-- `logo`：网站 logo
-- `appearance`：深色模式配置
-- `social`：社交链接配置
-- `navbarSocialInclude`：导航栏显示的社交链接
-- `footer`：页脚配置
-- `locales`：多语言配置
-
-### 导航栏配置
-
-导航栏配置文件位于 `docs/.vuepress/navbar.ts`，包含中文和英文两个版本的导航栏配置。
-
-### 内容集合配置
-
-内容集合配置文件位于 `docs/.vuepress/collections.ts`，用于配置博客文章的组织方式。
-
-## 内容管理
-
-### 博客文章
-
-博客文章位于 `docs/blog/` 目录下，按分类组织。每篇文章需要添加 frontmatter 配置，例如：
-
-```yaml
 ---
-title: 文章标题
-date: 2026-02-28
-description: 文章描述
-categories: [分类1, 分类2]
-tags: [标签1, 标签2]
----
-```
 
-### 友链管理
-
-友链配置位于 `docs/friends.md` 和 `docs/en/friends.md` 文件中，使用 YAML 格式配置友链列表。
-
-## 部署说明
-
-项目支持部署到 Vercel、GitHub Pages、Netlify 等平台。
-
-### Vercel 部署
-
-1. 登录 Vercel 账号
-2. 导入项目仓库
-3. 配置构建命令：`pnpm docs:build`
-4. 配置输出目录：`docs/.vuepress/dist`
-5. 点击部署按钮
-
-### GitHub Pages 部署
-
-1. 构建生产版本：`pnpm docs:build`
-2. 将 `docs/.vuepress/dist` 目录的内容推送到 `gh-pages` 分支
-3. 在仓库设置中启用 GitHub Pages，选择 `gh-pages` 分支
-
-## 开发指南
-
-### 添加新文章
-
-1. 在 `docs/blog/` 目录下创建新的 markdown 文件
-2. 添加 frontmatter 配置
-3. 编写文章内容
-4. 启动开发服务器查看效果
-
-### 自定义主题
-
-可以在 `docs/.vuepress/theme/` 目录下自定义主题组件和样式。
-
-## 依赖说明
-
-项目使用以下主要依赖：
-
-- VuePress 2.0.0-rc.26
-- VuePress Theme Plume 1.0.0-rc.191
-- TypeScript 5.9.3
-- Vue 3.5.26
-
-## 许可证
-
-MIT
+![Star History Chart](https://api.star-history.com/svg?repos=pengzhanbo/vuepress-theme-plume&type=Date)
 
 ## 联系方式
 
