@@ -1,6 +1,6 @@
 {
   "framework": null,
-  "buildCommand": "pnpm run docs:build",
+  "buildCommand": "pnpm run docs:build --clean-cache --clean-temp",
   "installCommand": "pnpm install",
   "outputDirectory": "docs/.vuepress/dist",
   "env": {
