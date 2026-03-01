@@ -1,10 +1,10 @@
 ---
 friends: true
 title: 友情链接
-description: 友情链接描述文本
+description: 在这里，你会遇见一群依然坚持写独立博客的朋友。他们用文字记录生活、分享旅行、交流技术、表达思考。
 permalink: /friends/
 contentPosition: after
-cols: 2
+cols: 3
 list:
   - name: 荒野菲克
     link: https://ficor.net

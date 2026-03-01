@@ -24,10 +24,11 @@ export default defineThemeConfig({
 
   social: [
     { icon: 'github', link: 'https://github.com/ficorcc' },
+    { icon: 'ri:mail-line', link: 'mailto:ficor@ficor.com' },
     { icon: 'wechat', link: 'https://theme-plume.vuejs.press/wechat.jpg' },
     { icon: 'mastodon', link: 'https://mastodon.social/@ficor' },
   ],
-  navbarSocialInclude: ['github',  'wechat', 'mastodon'], // 允许显示在导航栏的 social 社交链接
+  navbarSocialInclude: ['github', 'ri:mail-line', 'wechat', 'mastodon'], // 允许显示在导航栏的 social 社交链接
   aside: true, // 页内侧边栏， 默认显示在右侧
   // outline: [2, 3], // 页内大纲， 默认显示 h2, h3
 

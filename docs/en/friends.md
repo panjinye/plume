@@ -1,19 +1,11 @@
 ---
 friends: true
-title: 友情链接
-description: 友情链接描述文本
-permalink: /friends/
+title: Links
+description: Here, you will meet a group of friends who still insist on writing independent blogs. They use words to record their lives, share their travels, exchange technologies, and express their thoughts.
+permalink: /en/friends/
 contentPosition: after
-cols: 2
+cols: 3
 list:
-  - name: 荒野菲克
-    link: https://ficor.net
-    avatar: https://github.com/pengzhanbo.png
-    desc: 即使慢，驰而不息，纵会落后，纵会失败，但必须能够到达他所向的目标。
-  - name: Github
-    link: https://github.com/panjinye
-    avatar: https://github.com/pengzhanbo.png
-    desc: 即使慢，驰而不息，纵会落后，纵会失败，但必须能够到达他所向的目标。
   - name: 荒野菲克
     link: https://ficor.net
     avatar: https://img.ficor.net/uploads/2026/01/6960704808a61.webp
